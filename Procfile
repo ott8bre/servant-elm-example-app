@@ -1,1 +1,1 @@
-web: stack exec backend -- $PORT
+web: $WORK_DIR/stack exec backend -- $PORT
