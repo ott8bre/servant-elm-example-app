@@ -18,6 +18,7 @@ import           Servant                  ((:<|>) ((:<|>)), (:>), Get,
                                            serveDirectory)
 import           Servant.HTML.Lucid       (HTML)
 import           System.Random            (randomIO)
+import           System.Environment       (getArgs)
 
 import qualified Api.Server
 import qualified Api.Types
@@ -53,7 +54,9 @@ app bookDb = serve siteApi (server bookDb)
 
 main :: IO ()
 main = do
-  let port = 8000
+  args <- getArgs
+  let port = case args of [] -> 8080
+                          (x:_)  -> read x :: Int
   uuid1 <- toString <$> randomIO
   uuid2 <- toString <$> randomIO
   let books = [ Api.Types.Book (Just uuid1) "Real World Haskell" (Api.Types.Author "Bryan O'Sullivan, Don Stewart, and John Goerzen" 1970)
