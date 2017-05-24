@@ -2,7 +2,7 @@ all: backend frontend
 
 .PHONY: backend
 backend:
-	stack build
+	stack build --install-ghc --copy-bins
 
 .PHONY: frontend
 frontend: frontend/dist/app.js
