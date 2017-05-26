@@ -1,1 +1,1 @@
-web: stack exec backend -- $PORT
+web: backend $PORT
