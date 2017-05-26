@@ -15,7 +15,7 @@ import           Api.Types   (Api, Author, Book)
 elmOpts :: ElmOptions
 elmOpts =
   defElmOptions
-    { urlPrefix = Static "http://localhost:8000/api" }
+    { urlPrefix = Static "/api" }
 
 specs :: [Spec]
 specs =

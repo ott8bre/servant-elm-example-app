@@ -96,7 +96,7 @@ servant-elm's `elmJSWith` with some options:
   we have used `Generated.Api`.
 
 * `urlPrefix` specifies where the frontend code can connect to the API. In our
-  case it is `http://localhost:8000/api`.
+  case it is `/api`.
 
 
 ### The frontend
